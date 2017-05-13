@@ -16,7 +16,7 @@ public class FireHorde extends Card
     private int damage = 85;
     private int range = 3;
     private int attackCooldown = 1;
-    private int splashRange = 5;
+    private int splashRange = 10;
     
     private Speed speed = Speed.FAST;
     
