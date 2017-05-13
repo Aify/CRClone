@@ -18,7 +18,7 @@ public class Archers extends Card
     private int attackCooldown = 1;
     private int splashRange = 1;
     
-    private Speed speed = Speed.FAST;
+    private Speed speed = Speed.MEDIUM;
     
     private DamageType dType;
     private TargetType tType = TargetType.GROUND;

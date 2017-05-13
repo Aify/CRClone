@@ -1,22 +1,22 @@
 /**
- * Write a description of class Bomber here.
+ * Write a description of class Musketeer here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bomber extends Card 
+public class Musketeer extends Card 
 {
-    private int elixirCost = 3;
+    private int elixirCost = 4;
     private int amountOfTroops = 1;
     private int troopID;
     private int spawnTime = 1;
     
     private int id = 5;
-    private int hp = 311;
-    private int damage = 271;
-    private int range = 80;
+    private int hp = 598;
+    private int damage = 176;
+    private int range = 120;
     private int attackCooldown = 1;
-    private int splashRange = 10;
+    private int splashRange = 1;
     
     private Speed speed = Speed.MEDIUM;
     
