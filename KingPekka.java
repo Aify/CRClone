@@ -9,7 +9,7 @@ public class KingPekka extends Card
     private int elixirCost = 6;
     private int amountOfTroops = 1;
     private int troopID;
-    private int spawnTime = 1;
+    private int spawnTime = 2;
     
     private int id = 5;
     private int hp = 1050;
