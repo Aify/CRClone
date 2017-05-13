@@ -13,7 +13,7 @@ public class Pervert extends Card
 
 
 	private int id = 3;
-    private int hp = 600;
+    private int hp = 610;
     private int damage = 100;
     private int range = 40;
     private int attackCooldown = 1;
