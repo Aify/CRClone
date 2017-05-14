@@ -21,7 +21,7 @@ public class Tombstone extends Card
     private Speed speed = Speed.FAST;
     
     private DamageType dType;
-    private TargetType tType = TargetType.GROUND;
+    private TargetType tType = TargetType.BUILDINGS;
     private TargetType MTType = TargetType.ALL;
     
     private int attackTime;
