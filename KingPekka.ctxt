@@ -2,7 +2,7 @@
 comment0.target=KingPekka
 comment0.text=\r\n\ One\ hits\ all\ units\ but\ slow\ lazy\ and\ weak.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ spawn()
+comment1.target=KingPekka()
 comment2.params=
-comment2.target=java.lang.String\ toString()
+comment2.target=void\ spawn()
 numComments=3

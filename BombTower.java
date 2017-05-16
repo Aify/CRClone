@@ -6,30 +6,24 @@
  */
 public class BombTower extends Card 
 {
-   private int elixirCost = 5;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 1;
-    
-    private int id = 5;
-    private int hp = 1672;
-    private int damage = 176;
-    private int range = 120;
-    private int attackCooldown = 1;
-    private int splashRange = 40;
-    
-    private Speed speed = Speed.SLOW;
-    
-    private DamageType dType;
-    private TargetType tType = TargetType.BUILDINGS;
-    private TargetType MTType = TargetType.ALL;
-    
-    private int attackTime;
+    public BombTower()
+    {
+        elixirCost = 5;
+        amountOfTroops = 1;
+        spawnTime = 1;
+        id = 5;
+        hp = 1672;
+        damage = 176;
+        range = 120;
+        attackCooldown = 1;
+        splashRange = 10;
+        speed = Speed.SLOW;
+        tType = TargetType.BUILDINGS;
+        MTType = TargetType.ALL;
+        
+    }
     
     public void spawn(){
         
-    }
-    public String toString(){
-        return "" + troopID + "[" + amountOfTroops + "[" + elixirCost + "]";
     }
 }

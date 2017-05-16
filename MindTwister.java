@@ -6,30 +6,24 @@
  */
 public class MindTwister extends Card 
 {
-  private int elixirCost = 8;
-  private int amountOfTroops = 1;
-  private int troopID;
-  private int spawnTime = 1;
-
-  private int id = 5;
-  private int hp = 750;
-  private int damage = 50;
-  private int range = 20;
-  private int attackCooldown = 1;
-  private int splashRange = 5;
-
-  private Speed speed = Speed.MEDIUM;
+  public MindTwister()
+    {
+        elixirCost = 8;
+        amountOfTroops = 1;
+        spawnTime = 1;
+        id = 5;
+        hp = 750;
+        damage = 50;
+        range = 20;
+        attackCooldown = 1;
+        splashRange = 5;
+        speed = Speed.MEDIUM;
+        tType = TargetType.GROUND;
+        MTType = TargetType.GROUND;
+        
+    }
   
-  private DamageType dType;
-  private TargetType tType = TargetType.GROUND;
-  private TargetType MTType = TargetType.GROUND;
-
-  private int attackTime;
-
   public void spawn(){
 
     }
-  public String toString(){
-	return "" + troopID + "[" + amountOfTroops + "[" + elixirCost + "]";
-  }
 }

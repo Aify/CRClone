@@ -6,30 +6,24 @@
  */
  public class Wall extends Card 
 {
-    private int elixirCost = 7;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 1;
-
-    private int id = 5; 
-    private int hp = 3000;
-    private int damage = 0;
-    private int range = 0;
-    private int attackCooldown = 0;
-    private int splashRange = 0;
-    
-    private Speed speed = Speed.SLOW;
-    
-    private DamageType dType;
-    private TargetType tType = TargetType.BUILDINGS;
-    private TargetType mTType = TargetType.GROUND;
-    
-    private int attackTime;
+    public Wall()
+    {
+        elixirCost = 7;
+        amountOfTroops = 1;
+        spawnTime = 1;
+        id = 5;
+        hp = 3000;
+        damage = 0;
+        range = 0;
+        attackCooldown = 0;
+        splashRange = 0;
+        speed = Speed.SLOW;
+        tType = TargetType.BUILDINGS;
+        MTType = TargetType.GROUND;
+        
+    }
     
     public void spawn(){
     
-    }
-    public String toString(){
-        return "" + troopID + "[" + amountOfTroops + "[" + elixirCost + "]";
     }
 }

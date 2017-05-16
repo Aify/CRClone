@@ -6,32 +6,25 @@
  */
 public class BabySparky extends Card  
 {
-    private int elixerCost = 4;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 3;
-
-
-	private int id = 4;
-    private int hp = 166;
-    private int damage = 700;
-    private int range = 100;
-    private int attackCooldown = 7;
-    private int splashRange = 30;
+    public BabySparky()
+    {
+        elixirCost = 4;
+        amountOfTroops = 1;
+        spawnTime = 3;
+        id = 4;
+        hp = 166;
+        damage = 700;
+        range = 100;
+        attackCooldown = 7;
+        splashRange = 30;
+        speed = Speed.FAST;
+        tType = TargetType.GROUND;
+        MTType = TargetType.GROUND;
+        
+    }
     
-    private Speed speed = Speed.FAST;
-    
-    private DamageType dType;
-    private TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
-    private TargetType mTType = TargetType.GROUND;  // my t type, what the troop prefers to target
-
-    private int attackTime;
-
     public void spawn() {
 
     }
-    
-    public String toString() {
-        return "" + troopID + "[" + amountOfTroops + "[" + elixerCost + "]";
-    }
+
 }
