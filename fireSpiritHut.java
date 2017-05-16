@@ -27,6 +27,23 @@ public class fireSpiritHut extends Card
 
     private int attackTime;
 
+    public fireSpiritHut()
+    {
+        elixirCost = 5;
+        amountOfTroops = 1;
+        spawnTime = 1;
+        id = 5;
+        hp = 3344;
+        damage = 211;
+        range = 1;
+        attackCooldown = 1;
+        splashRange = 1;
+        speed = Speed.SLOW;
+        tType = TargetType.GROUND;
+        MTType = TargetType.BUILDINGS;
+        
+    }
+    
     public void spawn() {
 
     }

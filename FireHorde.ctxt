@@ -2,7 +2,7 @@
 comment0.target=FireHorde
 comment0.text=\r\n\ 6\ Fire\ spirits\ instead\ of\ 3.\ Now\ it's\ a\ fire\ HORDE\!\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ spawn()
+comment1.target=FireHorde()
 comment2.params=
-comment2.target=java.lang.String\ toString()
+comment2.target=void\ spawn()
 numComments=3

@@ -6,30 +6,24 @@
  */
 public class Cannon extends Card 
 {
-   private int elixirCost = 3;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 1;
-    
-    private int id = 5;
-    private int hp = 742;
-    private int damage = 127;
-    private int range = 110;
-    private int attackCooldown = 1;
-    private int splashRange = 1;
-    
-    private Speed speed = Speed.SLOW;
-    
-    private DamageType dType;
-    private TargetType tType = TargetType.BUILDINGS;
-    private TargetType MTType = TargetType.ALL;
-    
-    private int attackTime;
+    public Cannon()
+    {
+        elixirCost = 3;
+        amountOfTroops = 1;
+        spawnTime = 1;
+        id = 5;
+        hp = 742;
+        damage = 127;
+        range = 110;
+        attackCooldown = 1;
+        splashRange = 1;
+        speed = Speed.SLOW;
+        tType = TargetType.BUILDINGS;
+        MTType = TargetType.ALL;
+        
+    }
     
     public void spawn(){
         
-    }
-    public String toString(){
-        return "" + troopID + "[" + amountOfTroops + "[" + elixirCost + "]";
     }
 }
