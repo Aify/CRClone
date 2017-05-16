@@ -33,5 +33,57 @@ public abstract class Card
     public String toString() {
         return "" + id + "[" + amountOfTroops + "[" + elixirCost + "]";
     }
+    
+    public int getElixirCost() {
+        return elixirCost;
+    }
+    
+    public int getAmountOfTroops() {
+        return amountOfTroops;
+    }
+    
+    public int getSpawnTime() {
+        return spawnTime;
+    }
+    
+    public int getId() {
+        return id;
+    }
+    
+    public int getHp() {
+        return hp;
+    }
+    
+    public int getDamage() {
+        return damage;
+    }
+    
+    public int getRange() {
+        return range;
+    }
+    
+    public int getAttackCooldown() {
+        return attackCooldown;
+    }
+    
+    public int getSplashRange() {
+        return splashRange;
+    }
+    
+    public Speed getSpeed() {
+        return speed;
+    }
+    
+    public DamageType getDType() {
+        return dType;
+    }
+    
+    public TargetType getTType() {
+        return tType;
+    }
+    
+    public TargetType getMTType() {
+        return MTType;
+    }
 
 }

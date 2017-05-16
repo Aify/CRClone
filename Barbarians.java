@@ -6,32 +6,24 @@
  */
 public class Barbarians extends Card  
 {
-    private int elixerCost = 5;
-    private int amountOfTroops = 4;
-    private int troopID;
-    private int spawnTime = 1;
-
-
-	private int id = 1;
-    private int hp = 700;
-    private int damage = 130;
-    private int range = 10;
-    private int attackCooldown = 1;
-    private int splashRange = 0;
-    
-    private Speed speed = Speed.SLOW;
-    
-    private DamageType dType;
-    private TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
-    private TargetType mTType = TargetType.GROUND;  // my t type, what the troop prefers to target
-
-    private int attackTime;
-
-    public void spawn() {
-
+    public Barbarians()
+    {
+        elixirCost = 5;
+        amountOfTroops = 4;
+        spawnTime = 1;
+        id = 1;
+        hp = 700;
+        damage = 130;
+        range = 10;
+        attackCooldown = 1;
+        splashRange = 0;
+        speed = Speed.SLOW;
+        tType = TargetType.GROUND;
+        MTType = TargetType.GROUND;
+        
     }
     
-    public String toString() {
-        return "" + troopID + "[" + amountOfTroops + "[" + elixerCost + "]";
+    public void spawn() {
+
     }
 }

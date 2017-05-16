@@ -6,30 +6,24 @@
  */
 public class Rage extends Card 
 {
-  private int elixirCost = 2;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 1;
-    
-    private int id = 5;
-    private int hp = 999999;
-    private int damage = 0;
-    private int range = 100;
-    private int attackCooldown = 1;
-    private int splashRange = 1;
-    
-    private Speed speed = Speed.SLOW;
-    
-    private DamageType dType;
-    private TargetType tType = TargetType.GROUND;
-    private TargetType MTType = TargetType.ALL;
-    
-    private int attackTime;
+    public Rage()
+    {
+        elixirCost = 2;
+        amountOfTroops = 1;
+        spawnTime = 1;
+        id = 5;
+        hp = 999999;
+        damage = 0;
+        range = 100;
+        attackCooldown = 1;
+        splashRange = 1;
+        speed = Speed.SLOW;
+        tType = TargetType.GROUND;
+        MTType = TargetType.ALL;
+        
+    }
     
     public void spawn(){
         
-    }
-    public String toString(){
-        return "" + troopID + "[" + amountOfTroops + "[" + elixirCost + "]";
     }
 }
