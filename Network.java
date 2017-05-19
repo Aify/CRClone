@@ -27,7 +27,7 @@ public class Network extends Thread
 		// TODO: CONNECT TO SERVER
 		
 		try {
-			connection = new Socket("70.79.124.240", 6789);
+			connection = new Socket("70.79.124.240", 9876);
 			outStream = new PrintStream(connection.getOutputStream());
 			inStream = new Scanner(connection.getInputStream());
 		} catch (IOException e) {
