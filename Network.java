@@ -45,6 +45,14 @@ public class Network extends Thread
 				if (new Date().getTime() - syncTimer.getTime() > 15000) {
 					syncTimer = new Date();
 					outStream.println("3{SYNC");
+
+					String reply = inStream.readLine();
+					String[] replyArr = reply.split("{");
+					if (replyArr[1].equals("SYNC") {
+						// do nothing, this is normal.
+					} else if (replyArr[1].equals("START")) {
+						gameStarted = true;
+					}
 				} 
 			} else {
 				// game loop
