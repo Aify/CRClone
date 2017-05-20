@@ -6,30 +6,24 @@
  */
 public class RockyCave extends Card 
 {
-    private int elixirCost = 8;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 1;
-    
-    private int id = 5;
-    private int hp = 800;
-    private int damage = 260;
-    private int range = 1;
-    private int attackCooldown = 1;
-    private int splashRange = 1;
-    
-    private Speed speed = Speed.SLOW;
-    
-    private DamageType dtype;
-    private TargetType tType = TargetType.GROUND;
-    private TargetType MTType = TargetType.BUILDINGS;
-    
-    private int attackTime;
+    public RockyCave()
+    {
+        elixirCost = 8;
+        amountOfTroops = 1;
+        spawnTime = 1;
+        id = 5;
+        hp = 800;
+        damage = 260;
+        range = 1;
+        attackCooldown = 1;
+        splashRange = 10;
+        speed = Speed.SLOW;
+        tType = TargetType.GROUND;
+        MTType = TargetType.BUILDINGS;
+        
+    }
     
     public void spawn(){
         
-    }
-    public String toString(){
-        return "" + troopID + "[" + amountOfTroops + "[" + elixirCost + "]";
     }
 }
