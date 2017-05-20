@@ -46,7 +46,7 @@ public class Network extends Thread
 					syncTimer = new Date();
 					outStream.println("3{SYNC");
 
-					String reply = inStream.readLine();
+					String reply = inStream.nextLine();
 					String[] replyArr = reply.split("{");
 					if (replyArr[1].equals("SYNC")) {
 						// do nothing, this is normal.
