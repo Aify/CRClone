@@ -48,7 +48,7 @@ public class Network extends Thread
 
 					String reply = inStream.readLine();
 					String[] replyArr = reply.split("{");
-					if (replyArr[1].equals("SYNC") {
+					if (replyArr[1].equals("SYNC")) {
 						// do nothing, this is normal.
 					} else if (replyArr[1].equals("START")) {
 						gameStarted = true;
