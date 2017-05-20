@@ -35,7 +35,7 @@ public class Network extends Thread
 			e.printStackTrace();
 		}
 
-
+		// test
 		// write a sync message
 		outStream.println("3{SYNC");
 		syncTimer = new Date();
