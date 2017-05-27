@@ -6,32 +6,31 @@
  */
 public class HogRider extends Card  
 {
-    private int elixerCost = 4;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 1;
+    HogRider(){
+       elixirCost = 4;
+       amountOfTroops = 1;
+     
+       spawnTime = 1;
 
 
-	private int id = 1;
-    private int hp = 1408;
-    private int damage = 264;
-    private int range = 1;
-    private int attackCooldown = 1;
-    private int splashRange = 0;
+	   id = 1;
+       hp = 1408;
+       damage = 264;
+       range = 1;
+       attackCooldown = 1;
+       splashRange = 0;
+       speed = Speed.HYPER;
     
-    private Speed speed = Speed.HYPER;
-    
-    private DamageType dType;
-    private TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
-    private TargetType mTType = TargetType.BUILDINGS;  // my t type, what the troop prefers to target
+       DamageType dType;
+       TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
+       TargetType mTType = TargetType.BUILDINGS;  // my t type, what the troop prefers to target
 
-    private int attackTime;
+       int attackTime;
+    }
 
     public void spawn() {
 
     }
     
-    public String toString() {
-        return "" + troopID + "[" + amountOfTroops + "[" + elixerCost + "]";
-    }
+    
 }
