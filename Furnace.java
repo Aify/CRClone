@@ -4,9 +4,9 @@
  * @author (David) 
  * @version (a version number or a date)
  */
-public class fireSpiritHut extends Card  
+public class Furnace extends Card  
 {
-    public fireSpiritHut()
+    public Furnace()
     {
         elixirCost = 5;
         amountOfTroops = 1;
