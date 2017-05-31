@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Date;
 
 /**
  * Write a description of class Troop here.
@@ -34,10 +35,11 @@ public class Troop extends Actor
     private int positionY;
 
     public boolean active = false;
+    private Date spawnTime;
     
     // represents the amount of time it takes to finish an attack
     private int attackTime;
-    private int curAttack = 0;
+    private int curAttack = 0;    
 
     /**
      * Act - do whatever the Troop wants to do. This method is called whenever
@@ -45,15 +47,29 @@ public class Troop extends Actor
      */
     public void act() 
     {
-        positionX = getX();
-        positionY = getY();
-        
-        getTarget();
-        
-        move();
-        
-        if (attacking) {
-            attack();
+        if(active)
+        {
+            //if active, act
+            positionX = getX();
+            positionY = getY();
+            
+            getTarget();
+            
+            move();
+            
+            if (attacking) {
+                attack();
+            }
+        }
+        else if(spawnTime != null)
+        {
+            //if we have a spawntime we were just spawned and are waiting to go active
+            if(new Date().after(spawnTime)) //this actually means "is now later than when we are supposed to spawn?"
+            {
+                //if true, go active and clear spawnTime 
+                active = true;
+                spawnTime = null;
+            }
         }
     }
     
@@ -263,6 +279,14 @@ public class Troop extends Actor
     
     public void setMTargetType(TargetType mTType) {
         this.mTType = mTType;
+    }
+    
+    public void setAttackTime(int attackTime) {
+        this.attackTime = attackTime;
+    }
+    
+    public void setSpawnTime(Date spawnTime) {
+        this.spawnTime = spawnTime;
     }
    
 }

@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+import java.time.*;
 
 /**
  * Write a description of class MyWorld here.
@@ -9,7 +10,13 @@ import java.util.*;
  */
 public class MyWorld extends World
 {
+    //Elixir constants
+    private final int ELIXIR_STEP_TIME = 5; //every 5 seconds...
+    private final int ELIXIR_STEP_GAIN = 5; //gain 5 elixir
+    
     public static ArrayList<Troop> allTroops = new ArrayList<Troop>();
+    private static Instant lastGainTime;
+    private int myElixir;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -27,7 +34,7 @@ public class MyWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
-    {
+    {        
         /*
         Troop troop = new Troop();
         addObject(troop,320,482);
@@ -43,5 +50,90 @@ public class MyWorld extends World
         allTroops.add(troop2);
         troop2.setLocation(174,196);
          */
+    }
+    
+    /**
+     * Act method for world called on every tick (Greenfoot step)
+     */
+    @Override
+    public void act()
+    {
+        stepElixir();
+    }
+
+    /**
+     * Step elixir: gain elixir at specified rate
+     */
+    private void stepElixir()
+    {
+        //if lastGainTime is null, set it up and return
+        if(lastGainTime == null)
+        {
+            lastGainTime = Instant.now();
+            return;
+        }
+        
+        //otherwise, check if it's been more than ELIXIR_STEP_TIME since the last gain
+        if(lastGainTime.plusSeconds(ELIXIR_STEP_TIME).isBefore(Instant.now()))
+        {
+            myElixir += ELIXIR_STEP_GAIN;
+            lastGainTime = Instant.now();
+            System.out.println(myElixir);
+        }
+    }
+    
+    /**
+     * Getter for Elixir amount
+     */
+    public int getElixir()
+    {
+        return myElixir;
+    }
+    
+    public void playCard(Card c, int x, int y)
+    {
+        //check if we can afford the card
+        if(c.getElixirCost() < myElixir)
+        {
+            //we can't afford it, so abort
+            //we can put some kind of notification here if we want
+            return;
+        }
+        
+        //spend the elixir
+        myElixir -= c.getElixirCost();
+        
+        //spawn as many troops as the card specifies
+        for(int i = 0; i < c.getAmountOfTroops(); i++)
+        {
+        
+            //create a troop and load data from the card
+            Troop t = new Troop();
+            t.setID(c.getId());
+            t.setHP(c.getHp());
+            t.setDamage(c.getDamage());
+            t.setRange(c.getRange());
+            t.setAttackCooldown(c.getAttackCooldown());
+            t.setSplashRange(c.getSplashRange());
+            t.setSpeed(c.getSpeed());
+            t.setDamageType(c.getDType());
+            t.setTargetType(c.getTType());
+            t.setMTargetType(c.getMTType());
+            t.setAttackTime(c.getAttackTime());
+            
+            //set spawn time if non-zero
+            int spawnTime = c.getSpawnTime();
+            if(spawnTime > 0)
+            {
+                t.setSpawnTime(Date.from(Instant.now().plusSeconds(spawnTime)));
+            }
+            else
+            {
+                t.active = true;
+            }
+            
+            //add the troop to the world
+            addObject(t, x, y);
+        }
     }
 }
