@@ -11,7 +11,7 @@ public class Barbarians extends Card
         elixirCost = 5;
         amountOfTroops = 4;
         spawnTime = 1;
-        id = 1;
+        id = -1;
         hp = 700;
         damage = 130;
         range = 10;
