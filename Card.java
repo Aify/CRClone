@@ -85,5 +85,9 @@ public abstract class Card
     public TargetType getMTType() {
         return MTType;
     }
+    
+    public int getAttackTime() {
+        return attackTime;
+    }
 
 }
