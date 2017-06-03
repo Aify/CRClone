@@ -23,11 +23,10 @@ public class Golem extends Card
     
        speed = Speed.SLOW;
     
-       DamageType dType;
+
        TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
        TargetType mTType = TargetType.BUILDINGS;  // my t type, what the troop prefers to target
 
-       int attackTime;
         
     }
 

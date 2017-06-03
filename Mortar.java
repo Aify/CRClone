@@ -6,32 +6,25 @@
  */
 public class Mortar extends Card  
 {
-    private int elixerCost = 4;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 4;
-
-
-	private int id = 1;
-    private int hp = 1272;
-    private int damage = 228;
-    private int range = 220;
-    private int attackCooldown = 1;
-    private int splashRange = 80;
-    
-    private Speed speed = Speed.SLOW;
-    
-    private DamageType dType;
-    private TargetType tType = TargetType.BUILDINGS;   // the type of the troop, eg: this is a building or this is a flying or ground
-    private TargetType mTType = TargetType.GROUND;  // my t type, what the troop prefers to target
-
-    private int attackTime;
-
+    public Mortar()
+    {
+        
+       elixirCost = 4;
+       amountOfTroops = 1;
+       spawnTime = 4;
+	   id = 1;
+       hp = 1272;
+       damage = 228;
+       range = 220;
+       attackCooldown = 1;
+       splashRange = 80;
+       speed = Speed.SLOW;
+       tType = TargetType.BUILDINGS;  
+       MTType = TargetType.GROUND;
+    } 
     public void spawn() {
+       
+     
+    }
+    }
 
-    }
-    
-    public String toString() {
-        return "" + troopID + "[" + amountOfTroops + "[" + elixerCost + "]";
-    }
-}
