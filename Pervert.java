@@ -11,7 +11,7 @@ public class Pervert extends Card
         elixirCost = 3;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 3;
+        id = -1;
         hp = 610;
         damage = 100;
         range = 40;

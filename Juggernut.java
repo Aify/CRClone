@@ -10,7 +10,7 @@ public class Juggernut extends Card
     {
         elixirCost = 7;
         amountOfTroops = 1;
-        spawnTime = 1;
+        spawnTime = -1;
         id = 4;
         hp = 3500;
         damage = 800;

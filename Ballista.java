@@ -11,7 +11,7 @@ public class Ballista extends Card
     {
         elixirCost = 5;
         amountOfTroops = 1;
-        spawnTime = 1;
+        spawnTime = -1;
         id = 6;
         hp = 800;
         damage = 550;

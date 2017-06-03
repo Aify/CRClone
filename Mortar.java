@@ -12,7 +12,7 @@ public class Mortar extends Card
        elixirCost = 4;
        amountOfTroops = 1;
        spawnTime = 4;
-	   id = 1;
+	   id = -1;
        hp = 1272;
        damage = 228;
        range = 220;

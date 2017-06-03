@@ -11,7 +11,7 @@ public class Crusader extends Card
         elixirCost = 5;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 2;
+        id = -1;
         hp = 1000;
         damage = 475;
         range = 60;

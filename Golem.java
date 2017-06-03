@@ -14,7 +14,7 @@ public class Golem extends Card
        elixirCost = 8;
        amountOfTroops = 1;
        spawnTime = 3;
-	   id = 1;
+	   id = -1;
        hp = 4256;
        damage = 259;
        range = 1;

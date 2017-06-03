@@ -6,32 +6,31 @@
  */
 public class FireSpirit extends Card  
 {
-    private int elixerCost = 2;
-    private int amountOfTroops = 3;
-    private int troopID;
-    private int spawnTime = 1;
+       public FireSpirit()
+    {
+      elixirCost = 2;
+      amountOfTroops = 3;
+   
+      spawnTime = 1;
 
 
-	private int id = 1;
-    private int hp = 91;
-    private int damage = 169;
-    private int range = 40;
-    private int attackCooldown = 1;
-    private int splashRange = 40;
+	 id = -1;
+     hp = 91;
+     damage = 169;
+     range = 40;
+     attackCooldown = 1;
+     splashRange = 40;
     
-    private Speed speed = Speed.HYPER;
+     speed = Speed.HYPER;
     
-    private DamageType dType;
-    private TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
-    private TargetType mTType = TargetType.ALL;  // my t type, what the troop prefers to target
-
-    private int attackTime;
+  
+     tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
+     MTType = TargetType.ALL;  // my t type, what the troop prefers to target
+  }
 
     public void spawn() {
 
     }
     
-    public String toString() {
-        return "" + troopID + "[" + amountOfTroops + "[" + elixerCost + "]";
-    }
+   
 }

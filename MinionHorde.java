@@ -11,7 +11,7 @@ public class MinionHorde extends Card
          elixirCost = 5;
          amountOfTroops = 6;
         
-         spawnTime = 1;
+         spawnTime = -1;
 
 
 	     id = 1;

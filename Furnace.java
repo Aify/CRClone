@@ -9,7 +9,7 @@ public class Furnace extends Card
     public Furnace()
     {
         elixirCost = 5;
-        amountOfTroops = 1;
+        amountOfTroops = -1;
         spawnTime = 40;
         id = 3;
         hp = 1100;

@@ -14,7 +14,7 @@ public class Zap extends Card
      spawnTime = 0;
 
 
-	 id = 1;
+	 id = -1;
      hp = 0;
      damage = 159;
      range = 80000;

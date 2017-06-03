@@ -6,32 +6,30 @@
  */
 public class BattleRam extends Card  
 {
-    private int elixerCost = 4;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 1;
+    public BattleRam(){
+   elixirCost = 4;
+    amountOfTroops = 1;
+ 
+    spawnTime = 1;
 
 
-	private int id = 1;
-    private int hp = 756;
-    private int damage = 492;
-    private int range = 1;
-    private int attackCooldown = 0;
-    private int splashRange = 0;
+	id = -1;
+    hp = 756;
+     damage = 492;
+    range = 1;
+     attackCooldown = 0;
+   splashRange = 0;
     
-    private Speed speed = Speed.MEDIUM;
+    speed = Speed.MEDIUM;
     
-    private DamageType dType;
-    private TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
-    private TargetType mTType = TargetType.BUILDINGS;  // my t type, what the troop prefers to target
-
-    private int attackTime;
+   
+   tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
+  MTType = TargetType.BUILDINGS;  // my t type, what the troop prefers to target
+}
 
     public void spawn() {
 
     }
     
-    public String toString() {
-        return "" + troopID + "[" + amountOfTroops + "[" + elixerCost + "]";
-    }
+   
 }

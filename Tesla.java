@@ -13,7 +13,7 @@ public class Tesla extends Card
       spawnTime = 1;
 
 
-	  id = 1;
+	  id = -1;
       hp = 954;
       damage = 135;
       range = 110;
