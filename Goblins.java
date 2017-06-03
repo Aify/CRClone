@@ -12,7 +12,7 @@ public class Goblins extends Card
         elixirCost = 2;
         amountOfTroops = 3;
         spawnTime = 2;
-        id = 5;
+        id = -1;
         hp = 169;
         damage = 106;
         range = 1;

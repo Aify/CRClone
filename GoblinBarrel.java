@@ -11,7 +11,7 @@ public class GoblinBarrel extends Card
         elixirCost = 3;
         amountOfTroops = 3;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 169;
         damage = 106;
         range = 1;

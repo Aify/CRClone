@@ -12,7 +12,7 @@ public class Arrows extends Card
         elixirCost = 3;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 0;
         damage = 243;
         range = 9999999;

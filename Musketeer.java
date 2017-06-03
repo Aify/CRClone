@@ -11,7 +11,7 @@ public class Musketeer extends Card
         elixirCost = 4;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 598;
         damage = 176;
         range = 120;

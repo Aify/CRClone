@@ -11,7 +11,7 @@ public class Prince extends Card
         elixirCost = 5;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 1463;
         damage = 325;
         range = 1;
