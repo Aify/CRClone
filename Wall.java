@@ -11,7 +11,7 @@
         elixirCost = 7;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 3000;
         damage = 0;
         range = 0;

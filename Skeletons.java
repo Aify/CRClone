@@ -11,7 +11,7 @@ public class Skeletons extends Card
         elixirCost = 1;
         amountOfTroops = 4;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 67;
         damage = 67;
         range = 1;

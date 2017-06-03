@@ -11,7 +11,7 @@ public class MindTwister extends Card
         elixirCost = 8;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 750;
         damage = 50;
         range = 20;

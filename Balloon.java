@@ -12,7 +12,7 @@ public class Balloon extends Card
         elixirCost = 5;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 1396;
         damage = 798;
         range = 1;

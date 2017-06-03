@@ -11,7 +11,7 @@ public class Valkyrie extends Card
         elixirCost = 4;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 1548;
         damage = 211;
         range = 1;

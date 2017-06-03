@@ -11,7 +11,7 @@ public class Giant extends Card
         elixirCost = 5;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 3344;
         damage = 211;
         range = 1;

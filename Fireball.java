@@ -11,7 +11,7 @@ public class Fireball extends Card
         elixirCost = 4;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = -1;
         hp = 1;
         damage = 572;
         range = 9999999;
