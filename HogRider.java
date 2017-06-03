@@ -21,11 +21,10 @@ public class HogRider extends Card
        splashRange = 0;
        speed = Speed.HYPER;
     
-       DamageType dType;
        TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
        TargetType mTType = TargetType.BUILDINGS;  // my t type, what the troop prefers to target
 
-       int attackTime;
+
     }
 
     public void spawn() {
