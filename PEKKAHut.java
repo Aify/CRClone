@@ -11,7 +11,7 @@ public class PEKKAHut extends Card
         elixirCost = 5;
         amountOfTroops = 1;
         spawnTime = 16;
-        id = 8;
+        id = -1;
         hp = 1200;
         damage = 0;
         range = 0;
