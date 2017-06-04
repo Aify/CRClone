@@ -15,6 +15,7 @@ public class MyWorld extends World
     private final int ELIXIR_STEP_GAIN = 5; //gain 5 elixir
     
     public static ArrayList<Troop> allTroops = new ArrayList<Troop>();
+    public static ArrayList<SpawnedCardData> newCards = new ArrayList<SpawnedCardData>();
     private static Instant lastGainTime;
     private int myElixir;
 
@@ -103,6 +104,9 @@ public class MyWorld extends World
         //spend the elixir
         myElixir -= c.getElixirCost();
         
+        //add to "new cards" list
+        newCards.add(new SpawnedCardData(c,x,y));
+        
         //spawn as many troops as the card specifies
         for(int i = 0; i < c.getAmountOfTroops(); i++)
         {
@@ -134,6 +138,8 @@ public class MyWorld extends World
             
             //add the troop to the world
             addObject(t, x, y);
+            
+            allTroops.add(t);
         }
     }
 }
