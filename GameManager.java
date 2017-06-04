@@ -1,4 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
+import java.io.*;
+import java.net.*;
 
 /**
  * GameManager manages synchronization of game state across the network
@@ -11,12 +14,16 @@ public class GameManager extends Actor
     //this enum is used for defining states this object can be in- ask Hank what a state machine is if you're curious
     private enum GameManagerState
     {
-        UNCONNECTED, STARTED;
+        UNCONNECTED, WAITING, STARTED;
     }
     
     static final String SERVER_IP = "127.0.0.1";
+    static final int PORT = 9876;
     
     private GameManagerState state;
+    private Socket client;
+    private Scanner inStream;
+	private PrintStream outStream;
     
     public GameManager()
     {
@@ -35,6 +42,9 @@ public class GameManager extends Actor
             case UNCONNECTED:
                 attemptConnection();
                 break;
+            case WAITING:
+                syncServerState();
+                break;
             case STARTED:
                 syncMySpawnedUnits();
                 syncOtherSpawnedUnits();
@@ -48,7 +58,35 @@ public class GameManager extends Actor
      */
     private void attemptConnection()
     {
-        //TODO connect to the server and switch state when done
+        //connect to the server and switch state when done
+        try {
+	         System.out.println("Connecting to " + SERVER_IP + " on port " + PORT);
+	         client = new Socket(SERVER_IP, PORT);
+	         inStream = new Scanner(client.getInputStream());
+	         outStream = new PrintStream(client.getOutputStream());
+	         if(client.isConnected()) {
+	             state = GameManagerState.WAITING;
+	           }
+	      }catch(IOException e) {
+	         e.printStackTrace();
+	      }
+    }
+    
+    /**
+     * syncServerState checks if the server is started yet
+     */    
+    private void syncServerState()
+    {
+        //poll the server state and check own stream for message
+        outStream.println("5{CHECK");
+        if(inStream.hasNextLine()) {
+            String s = inStream.nextLine();
+            //System.out.println(s);
+            String[] sParts = s.split("\\{");
+            if(sParts[0] == "5" && Boolean.valueOf(sParts[1])) {
+                state = GameManagerState.STARTED;
+            }
+        }        
     }
     
     /**

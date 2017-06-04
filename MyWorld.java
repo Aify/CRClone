@@ -35,7 +35,10 @@ public class MyWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
-    {        
+    {
+        //setup game manager
+        addObject(new GameManager(),0,0);
+        
         /*
         Troop troop = new Troop();
         addObject(troop,320,482);
