@@ -18,4 +18,6 @@ comment5.target=int\ getElixir()
 comment5.text=\r\n\ Getter\ for\ Elixir\ amount\r\n
 comment6.params=c\ x\ y
 comment6.target=void\ playCard(Card,\ int,\ int)
-numComments=7
+comment7.params=c\ x\ y\ localOnly
+comment7.target=void\ playCard(Card,\ int,\ int,\ boolean)
+numComments=8

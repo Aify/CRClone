@@ -96,6 +96,11 @@ public class MyWorld extends World
     
     public void playCard(Card c, int x, int y)
     {
+        playCard(c,x,y,false);
+    }
+    
+    public void playCard(Card c, int x, int y, boolean localOnly)
+    {
         //check if we can afford the card
         if(c.getElixirCost() < myElixir)
         {
@@ -107,8 +112,9 @@ public class MyWorld extends World
         //spend the elixir
         myElixir -= c.getElixirCost();
         
-        //add to "new cards" list
-        newCards.add(new SpawnedCardData(c,x,y));
+        //add to "new cards" list if not localOnly
+        if(!localOnly)
+            newCards.add(new SpawnedCardData(c,x,y));
         
         //spawn as many troops as the card specifies
         for(int i = 0; i < c.getAmountOfTroops(); i++)

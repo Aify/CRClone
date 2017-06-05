@@ -24,6 +24,10 @@ public class SpawnedCardData
     }
     
     //we can still have static and non-static utility methods, but we don't have any yet
+    public String toFormattedString()
+    {
+        return (cardName + "," + x + "," + y);
+    }
 
     
 }

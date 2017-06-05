@@ -23,7 +23,7 @@ public class GameManager extends Actor
     private GameManagerState state;
     private Socket client;
     private Scanner inStream;
-	private PrintStream outStream;
+    private PrintStream outStream;
     
     public GameManager()
     {
@@ -60,16 +60,18 @@ public class GameManager extends Actor
     {
         //connect to the server and switch state when done
         try {
-	         System.out.println("Connecting to " + SERVER_IP + " on port " + PORT);
-	         client = new Socket(SERVER_IP, PORT);
-	         inStream = new Scanner(client.getInputStream());
-	         outStream = new PrintStream(client.getOutputStream());
-	         if(client.isConnected()) {
-	             state = GameManagerState.WAITING;
-	           }
-	      }catch(IOException e) {
-	         e.printStackTrace();
-	      }
+             System.out.println("Connecting to " + SERVER_IP + " on port " + PORT);
+             client = new Socket(SERVER_IP, PORT);
+             inStream = new Scanner(client.getInputStream());
+             outStream = new PrintStream(client.getOutputStream());
+             if(client.isConnected()) {
+                 state = GameManagerState.WAITING;
+               }
+          } catch(ConnectException e) {
+              System.out.println("Failed to connect to server!");
+          } catch(Exception e) {
+             e.printStackTrace();
+          }
     }
     
     /**
@@ -94,7 +96,14 @@ public class GameManager extends Actor
      */
     private void syncMySpawnedUnits()
     {
-        //TODO send list of spawned units/cards to the server
+        MyWorld w = getWorldOfType(MyWorld.class);
+        
+        for(SpawnedCardData scd : w.newCards) {
+            String outStr = "4{" + scd.toFormattedString();
+            outStream.println(outStr);
+        }
+        
+        w.newCards.clear();
     }
     
     /**
@@ -102,6 +111,23 @@ public class GameManager extends Actor
      */
     private void syncOtherSpawnedUnits()
     {
-        //TODO get a list of spawned units/cards and recreate them here
+        MyWorld w = getWorldOfType(MyWorld.class);
+        
+        //get a list of spawned units/cards and recreate them here
+        while(inStream.hasNextLine()) {
+            try {
+                String s = inStream.nextLine();
+                String[] sParts = s.split("\\{");
+                if(sParts[0] == "4") {
+                    String[] args = sParts[1].split(",");
+                    String c = args[0];
+                    int x = Integer.parseInt(args[1]);
+                    int y = Integer.parseInt(args[2]);
+                    w.playCard((Card)Class.forName(c).getConstructor().newInstance(),x,y,true);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
