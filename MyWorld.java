@@ -11,8 +11,8 @@ import java.time.*;
 public class MyWorld extends World
 {
     //Elixir constants
-    private final int ELIXIR_STEP_TIME = 5; //every 5 seconds...
-    private final int ELIXIR_STEP_GAIN = 5; //gain 5 elixir
+    private final int ELIXIR_STEP_TIME = 1; //every 5 seconds...
+    private final int ELIXIR_STEP_GAIN = 1; //gain 5 elixir
     
     public static ArrayList<Troop> allTroops = new ArrayList<Troop>();
     public static ArrayList<SpawnedCardData> newCards = new ArrayList<SpawnedCardData>();
