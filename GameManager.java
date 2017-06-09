@@ -95,6 +95,7 @@ public class GameManager extends Actor
         //connect to the server and switch state when done
         if(networkHandler == null)
         {
+            System.out.println("Creating network handler: " + SERVER_IP + ":" + PORT);
             networkHandler = new Network();
             networkHandler.IP = SERVER_IP;
             networkHandler.Port = PORT;
@@ -104,6 +105,7 @@ public class GameManager extends Actor
         
 
              if(networkHandler.connection != null && networkHandler.connection.isConnected()) {
+                 System.out.println("Connected to server!");
                  state = GameManagerState.WAITING;
                }
                else
@@ -126,6 +128,7 @@ public class GameManager extends Actor
             String[] sParts = s.split("\\{");
             if(sParts[0] == "5" && Boolean.valueOf(sParts[1])) {
                 state = GameManagerState.STARTED;
+                System.out.println("Game started!");
             }
         }        
     }

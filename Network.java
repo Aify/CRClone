@@ -47,7 +47,7 @@ public class Network extends Thread
            @Override
            public void run() {
                 //get all new messages and put in messagesReceived
-                while (true) { 
+                while (Network.okayToRun) { 
                     messagesReceived.add(inStream.nextLine()); 
                 }
            }
