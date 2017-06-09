@@ -120,6 +120,7 @@ public class Troop extends Actor
         Troop closestEnemy = null;
         
         if (MyWorld.allTroops.get(0) == null) {
+            // no troops
             return;
         }
         double closestDistance = getDistanceToTarget(MyWorld.allTroops.get(0));
@@ -167,7 +168,8 @@ public class Troop extends Actor
     }
     
     public boolean checkIsEnemy(Troop t) {
-        return (t.playerNumber == this.playerNumber);
+        // if the troop is NOT us, then it's an enemy
+        return (t.playerNumber != this.playerNumber);
     }
     
     public void attack() {
