@@ -12,7 +12,7 @@ public class WhiteWitch extends Card
     private int spawnTime = 10;
 
 
-	private int id = 3;
+    private int id = 3;
     private int hp = 220;
     private int damage = 320;
     private int range = 0;
