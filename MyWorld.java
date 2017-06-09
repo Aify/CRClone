@@ -39,6 +39,9 @@ public class MyWorld extends World
         //setup game manager
         addObject(new GameManager(),0,0);
         
+        //test card
+        addObject(new ActorCard("Goblins"), 128, 700);
+        
         /*
         Troop troop = new Troop();
         addObject(troop,320,482);

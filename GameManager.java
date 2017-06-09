@@ -25,6 +25,7 @@ public class GameManager extends Actor
     private Scanner inStream;
     private PrintStream outStream;
     
+    public static Actor lastSelectedCard = null;
     public static Card lastSelected = null;
     
     
@@ -36,10 +37,14 @@ public class GameManager extends Actor
     }
     
     /**
-     * Act - setup connection and synchronize game state here
+     * Act - setup connection and synchronize game state here, as well as spawning cards
      */
     public void act() 
     {
+        //deal with the card spawning
+        handleCardSpawn();
+        
+        
         switch(state)
         {
             case UNCONNECTED:
@@ -52,6 +57,25 @@ public class GameManager extends Actor
                 syncMySpawnedUnits();
                 syncOtherSpawnedUnits();
                 break;
+        }
+    }
+    
+    
+    /**
+     * handleCardSpawn - check if we need to spawn a card and do so
+     */
+    private void handleCardSpawn()
+    {
+        MyWorld w = getWorldOfType(MyWorld.class);
+        
+        if(Greenfoot.mousePressed(w) && lastSelected != null)
+        {
+                       
+            w.playCard(lastSelected, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            lastSelected = null;
+            w.removeObject(lastSelectedCard);
+            lastSelectedCard = null;
+            
         }
     }
     
