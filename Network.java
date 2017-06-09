@@ -24,6 +24,8 @@ public class Network extends Thread
 
     public Date syncTimer;
     
+    public boolean okayToRun = false;
+    
     private BlockingQueue<String> messagesToSend = new LinkedBlockingQueue<String>();
     private BlockingQueue<String> messagesReceived = new LinkedBlockingQueue<String>();
     
@@ -32,18 +34,18 @@ public class Network extends Thread
         // connect to server
         // TODO: CONNECT TO SERVER
         
-        while(connection == null) {
-        try {
-            connection = new Socket(IP, Port);
-            outStream = new PrintStream(connection.getOutputStream());
-            inStream = new Scanner(connection.getInputStream());
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+       while(connection == null && okayToRun) {
+            try {
+                connection = new Socket(IP, Port);
+                outStream = new PrintStream(connection.getOutputStream());
+                inStream = new Scanner(connection.getInputStream());
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
-    }
     
-        while (true) {
+        while (okayToRun) {
             //get all new messages and put in messagesReceived
             if(inStream.hasNextLine())
             {

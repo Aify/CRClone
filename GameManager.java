@@ -21,9 +21,6 @@ public class GameManager extends Actor
     static final int PORT = 9876;
     
     private GameManagerState state;
-    private Socket client;
-    private Scanner inStream;
-    private PrintStream outStream;
     
     private Network networkHandler;
     
@@ -38,7 +35,8 @@ public class GameManager extends Actor
         networkHandler = new Network();
         networkHandler.IP = SERVER_IP;
         networkHandler.Port = PORT;
-        networkHandler.run();
+        networkHandler.okayToRun = true;
+        networkHandler.start();
         
         state = GameManagerState.UNCONNECTED;
     }
@@ -93,19 +91,15 @@ public class GameManager extends Actor
     private void attemptConnection()
     {
         //connect to the server and switch state when done
-        try {
-             System.out.println("Connecting to " + SERVER_IP + " on port " + PORT);
-             client = new Socket(SERVER_IP, PORT);
-             inStream = new Scanner(client.getInputStream());
-             outStream = new PrintStream(client.getOutputStream());
-             if(client.isConnected()) {
+
+             if(networkHandler.connection != null && networkHandler.connection.isConnected()) {
                  state = GameManagerState.WAITING;
                }
-          } catch(ConnectException e) {
-              System.out.println("Failed to connect to server!");
-          } catch(Exception e) {
-             e.printStackTrace();
-          }
+               else
+               {
+                   System.out.println("Failed to connect to server!");
+                }
+
     }
     
     /**
@@ -114,9 +108,9 @@ public class GameManager extends Actor
     private void syncServerState()
     {
         //poll the server state and check own stream for message
-        outStream.println("5{CHECK");
-        if(inStream.hasNextLine()) {
-            String s = inStream.nextLine();
+        networkHandler.addMessage("5{CHECK");
+        if(networkHandler.hasMessage()) {
+            String s = networkHandler.readMessage();
             //System.out.println(s);
             String[] sParts = s.split("\\{");
             if(sParts[0] == "5" && Boolean.valueOf(sParts[1])) {
@@ -134,7 +128,7 @@ public class GameManager extends Actor
         
         for(SpawnedCardData scd : w.newCards) {
             String outStr = "4{" + scd.toFormattedString();
-            outStream.println(outStr);
+            networkHandler.addMessage(outStr);
         }
         
         w.newCards.clear();
@@ -148,9 +142,9 @@ public class GameManager extends Actor
         MyWorld w = getWorldOfType(MyWorld.class);
         
         //get a list of spawned units/cards and recreate them here
-        while(inStream.hasNextLine()) {
+        while(networkHandler.hasMessage()) {
             try {
-                String s = inStream.nextLine();
+                String s = networkHandler.readMessage();
                 String[] sParts = s.split("\\{");
                 if(sParts[0] == "4") {
                     String[] args = sParts[1].split(",");

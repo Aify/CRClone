@@ -119,7 +119,9 @@ public class MyWorld extends World
         
         //add to "new cards" list if not localOnly
         if(!localOnly)
+        {
             newCards.add(new SpawnedCardData(c,x,y));
+        }
         
         //spawn as many troops as the card specifies
         for(int i = 0; i < c.getAmountOfTroops(); i++)
