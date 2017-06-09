@@ -24,15 +24,13 @@ public class Network extends Thread
 
     public Date syncTimer;
     
-    public boolean okayToRun = false;
+    public static boolean okayToRun = false;
     
     private BlockingQueue<String> messagesToSend = new LinkedBlockingQueue<String>();
     private BlockingQueue<String> messagesReceived = new LinkedBlockingQueue<String>();
     
     @Override
     public void run() {
-        // connect to server
-        // TODO: CONNECT TO SERVER
         
        while(connection == null && okayToRun) {
             try {
@@ -41,7 +39,7 @@ public class Network extends Thread
                 inStream = new Scanner(connection.getInputStream());
             } catch (IOException e) {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         }
     

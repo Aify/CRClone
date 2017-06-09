@@ -31,6 +31,8 @@ public class GameManager extends Actor
     public GameManager()
     {
         super();
+        
+        Network.okayToRun = false;
    
         state = GameManagerState.UNCONNECTED;
     }
@@ -71,10 +73,16 @@ public class GameManager extends Actor
         if(Greenfoot.mousePressed(w) && lastSelected != null)
         {
                        
-            w.playCard(lastSelected, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
-            lastSelected = null;
-            w.removeObject(lastSelectedCard);
-            lastSelectedCard = null;
+            if(w.playCard(lastSelected, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()))
+            {
+                lastSelected = null;
+                w.removeObject(lastSelectedCard);
+                lastSelectedCard = null;
+            }
+            else
+            {
+                //System.out.println("Cannot afford!");
+            }
             
         }
     }
@@ -90,7 +98,7 @@ public class GameManager extends Actor
             networkHandler = new Network();
             networkHandler.IP = SERVER_IP;
             networkHandler.Port = PORT;
-            networkHandler.okayToRun = true;
+            Network.okayToRun = true;
             networkHandler.start();
         }
         
@@ -100,7 +108,7 @@ public class GameManager extends Actor
                }
                else
                {
-                   System.out.println("Failed to connect to server!");
+                   //System.out.println("Failed to connect to server!");
                 }
 
     }

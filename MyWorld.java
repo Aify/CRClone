@@ -97,21 +97,23 @@ public class MyWorld extends World
         return myElixir;
     }
     
-    public void playCard(Card c, int x, int y)
+    public boolean playCard(Card c, int x, int y)
     {
-        playCard(c,x,y,false);
+        //System.out.println("playCard cxy");
+        return playCard(c,x,y,false);
     }
     
-    public void playCard(Card c, int x, int y, boolean localOnly)
+    public boolean playCard(Card c, int x, int y, boolean localOnly)
     {
-        System.out.println("playing card " + c.toString());
+        //System.out.println("playing card " + c.toString());
         
         //check if we can afford the card
-        if(c.getElixirCost() < myElixir)
+        if(c.getElixirCost() > myElixir)
         {
             //we can't afford it, so abort
             //we can put some kind of notification here if we want
-            return;
+
+            return false;
         }
         
         //spend the elixir
@@ -158,5 +160,6 @@ public class MyWorld extends World
             
             allTroops.add(t);
         }
+        return true;
     }
 }
