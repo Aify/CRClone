@@ -121,7 +121,7 @@ public class GameManager extends Actor
         //poll the server state and check own stream for message
         networkHandler.addMessage("5{CHECK");
         if(networkHandler.hasMessage()) {
-            String s = networkHandler.readMessage();
+            String s = networkHandler.getMessage();
             //System.out.println(s);
             String[] sParts = s.split("\\{");
             if(sParts[0] == "5" && Boolean.valueOf(sParts[1])) {
@@ -155,7 +155,7 @@ public class GameManager extends Actor
         //get a list of spawned units/cards and recreate them here
         while(networkHandler.hasMessage()) {
             try {
-                String s = networkHandler.readMessage();
+                String s = networkHandler.getMessage();
                 String[] sParts = s.split("\\{");
                 if(sParts[0] == "4") {
                     String[] args = sParts[1].split(",");
