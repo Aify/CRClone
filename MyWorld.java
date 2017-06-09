@@ -82,7 +82,7 @@ public class MyWorld extends World
         {
             myElixir += ELIXIR_STEP_GAIN;
             lastGainTime = Instant.now();
-            System.out.println(myElixir);
+            //System.out.println(myElixir);
         }
     }
     
