@@ -11,7 +11,7 @@ public class Furnace extends Card
         elixirCost = 5;
         amountOfTroops = -1;
         spawnTime = 40;
-        id = 3;
+        id = 22;
         hp = 1100;
         damage = 0;
         range = 0;

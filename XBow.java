@@ -11,7 +11,7 @@ public class XBow extends Card
         elixirCost = 6;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 65;
         hp = 1330;
         damage = 26;
         range = 230;

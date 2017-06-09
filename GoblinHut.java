@@ -11,7 +11,7 @@ public class GoblinHut extends Card
         elixirCost = 5;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 26;
         hp = 1293;
         damage = 50;
         range = 100;

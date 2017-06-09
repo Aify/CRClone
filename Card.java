@@ -28,6 +28,20 @@ public abstract class Card
     public Card()
     {
         //Card superclass constructor
+        //safe defaults
+        elixirCost = 1;
+        amountOfTroops = 1;
+        spawnTime = 1;
+        id = -1;
+        hp = 100;
+        damage = 100;
+        range = 50;
+        attackCooldown = 1;
+        splashRange = 1;
+        speed = Speed.MEDIUM;
+        tType = TargetType.GROUND;
+        MTType = TargetType.ALL;
+        
     }
     
     public String toString() {

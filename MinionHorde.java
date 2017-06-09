@@ -14,7 +14,7 @@ public class MinionHorde extends Card
          spawnTime = -1;
 
 
-	     id = 1;
+	     id = 39;
          hp = 190;
          damage = 84;
          range = 40;

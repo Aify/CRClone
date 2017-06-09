@@ -11,7 +11,7 @@ public class Cannon extends Card
         elixirCost = 3;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 13;
         hp = 742;
         damage = 127;
         range = 110;

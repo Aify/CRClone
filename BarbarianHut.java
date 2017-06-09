@@ -11,7 +11,7 @@ public class BarbarianHut extends Card
         elixirCost = 7;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = 8;
         hp = 1936;
         damage = 159;
         range = 1;

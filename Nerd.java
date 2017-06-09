@@ -11,7 +11,7 @@ public class Nerd extends Card
         elixirCost = 6;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 44;
         hp = 400;
         damage = 450;
         range = 120;

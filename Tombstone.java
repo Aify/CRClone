@@ -11,7 +11,7 @@ public class Tombstone extends Card
         elixirCost = 3;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 56;
         hp = 422;
         damage = 67;
         range = 1;

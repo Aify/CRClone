@@ -14,7 +14,7 @@ public class FireSpirit extends Card
       spawnTime = 1;
 
 
-	 id = -1;
+	 id = 20;
      hp = 91;
      damage = 169;
      range = 40;
