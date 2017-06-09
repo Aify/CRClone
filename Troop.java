@@ -154,6 +154,10 @@ public class Troop extends Actor
     }
     
     public boolean checkCanHit(Troop t) {
+        if (mTType == TargetType.ALL) {
+            return true;
+        }
+        
         if (t.getTargetType() == mTType) {
             return true;
         }
