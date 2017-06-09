@@ -120,6 +120,7 @@ public class Troop extends Actor
         Troop closestEnemy = null;
         
         if (MyWorld.allTroops.get(0) == null) {
+            return;
         }
         double closestDistance = getDistanceToTarget(MyWorld.allTroops.get(0));
         
