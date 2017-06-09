@@ -4,7 +4,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class Card  
+public abstract class Card
 {
     protected int elixirCost;
     protected int amountOfTroops;
@@ -104,4 +104,6 @@ public abstract class Card
         return attackTime;
     }
 
+    
+    
 }

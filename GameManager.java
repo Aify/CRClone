@@ -25,6 +25,9 @@ public class GameManager extends Actor
     private Scanner inStream;
     private PrintStream outStream;
     
+    public static Card lastSelected = null;
+    
+    
     public GameManager()
     {
         super();
@@ -49,7 +52,6 @@ public class GameManager extends Actor
                 syncMySpawnedUnits();
                 syncOtherSpawnedUnits();
                 break;
-
         }
     }
     
