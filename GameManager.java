@@ -17,7 +17,7 @@ public class GameManager extends Actor
         UNCONNECTED, WAITING, STARTED;
     }
     
-    static final String SERVER_IP = "127.0.0.1";
+    static final String SERVER_IP = "50.64.164.103";
     static final int PORT = 9876;
     
     private GameManagerState state;
