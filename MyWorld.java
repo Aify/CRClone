@@ -144,6 +144,10 @@ public class MyWorld extends World
             t.setMTargetType(c.getMTType());
             t.setAttackTime(c.getAttackTime());
             
+            //set image
+            String cardName = c.getClass().getSimpleName();
+            t.setImage("images/"+cardName+".png");
+            
             //set spawn time if non-zero
             int spawnTime = c.getSpawnTime();
             if(spawnTime > 0)
