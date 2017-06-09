@@ -129,6 +129,7 @@ public class MyWorld extends World
         
             //create a troop and load data from the card
             Troop t = new Troop();
+            //System.out.println(t);
             t.setID(c.getId());
             t.setHP(c.getHp());
             t.setDamage(c.getDamage());
