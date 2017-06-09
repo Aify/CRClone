@@ -23,6 +23,7 @@ public class GameManager extends Actor
     private GameManagerState state;
     
     private Network networkHandler;
+    public static int playerNumber;
     
     public static Actor lastSelectedCard = null;
     public static Card lastSelected = null;
@@ -126,9 +127,11 @@ public class GameManager extends Actor
             String s = networkHandler.getMessage();
             System.out.println(s);
             String[] sParts = s.split("\\{");
-            if(sParts[0].equals("5") && Boolean.valueOf(sParts[1])) {
+                String[] sParts2 = sParts[1].split(",");
+            if(sParts[0].equals("5") && Boolean.valueOf(sParts2[0])) {
                 state = GameManagerState.STARTED;
-                System.out.println("Game started!");
+                playerNumber = Integer.parseInt(sParts2[1]);
+                System.out.println("Game started! Player:" + playerNumber);
             }
         }        
     }
@@ -165,7 +168,8 @@ public class GameManager extends Actor
                     String c = args[0];
                     int x = Integer.parseInt(args[1]);
                     int y = Integer.parseInt(args[2]);
-                    w.playCard((Card)Class.forName(c).getConstructor().newInstance(),x,y,true);
+                    int pid = Integer.parseInt(args[3]);
+                    w.playCard((Card)Class.forName(c).getConstructor().newInstance(),x,y,true,pid);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

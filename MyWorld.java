@@ -100,10 +100,10 @@ public class MyWorld extends World
     public boolean playCard(Card c, int x, int y)
     {
         //System.out.println("playCard cxy");
-        return playCard(c,x,y,false);
+        return playCard(c,x,y,false,GameManager.playerNumber);
     }
     
-    public boolean playCard(Card c, int x, int y, boolean localOnly)
+    public boolean playCard(Card c, int x, int y, boolean localOnly,int pid)
     {
         //System.out.println("playing card " + c.toString());
         
@@ -143,6 +143,7 @@ public class MyWorld extends World
             t.setTargetType(c.getTType());
             t.setMTargetType(c.getMTType());
             t.setAttackTime(c.getAttackTime());
+            t.playerNumber = pid;
             
             //set image
             String cardName = c.getClass().getSimpleName();
