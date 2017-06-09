@@ -25,6 +25,8 @@ public class GameManager extends Actor
     private Scanner inStream;
     private PrintStream outStream;
     
+    private Network networkHandler;
+    
     public static Actor lastSelectedCard = null;
     public static Card lastSelected = null;
     
@@ -32,6 +34,11 @@ public class GameManager extends Actor
     public GameManager()
     {
         super();
+        
+        networkHandler = new Network();
+        networkHandler.IP = SERVER_IP;
+        networkHandler.Port = PORT;
+        networkHandler.run();
         
         state = GameManagerState.UNCONNECTED;
     }
