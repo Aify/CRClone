@@ -43,19 +43,26 @@ public class Network extends Thread
             }
         }
     
-        while (okayToRun) {
-            //get all new messages and put in messagesReceived
-            if(inStream.hasNextLine())
-            {
-                messagesReceived.add(inStream.nextLine());
-            }
-            
+       Thread t = new Thread(new Runnable() {
+           @Override
+           public void run() {
+                //get all new messages and put in messagesReceived
+                while (true) { 
+                    messagesReceived.add(inStream.nextLine()); 
+                }
+           }
+        
+       });
+        
+       t.start();
+        
+       while (okayToRun) {
             //send all pending messages
             if(!messagesToSend.isEmpty())
             {
                 outStream.println(messagesToSend.remove());
             }
-        }
+       }
     }
 
     public  synchronized void writeMsg(String s) {
@@ -67,19 +74,19 @@ public class Network extends Thread
     }
     
     public synchronized boolean addMessage(String s) {
-	    return messagesToSend.offer(s);
-	}
-	
-	public synchronized String getMessage() {
-	    if(messagesReceived.isEmpty())
-	    return null;
-	    
-	    return messagesReceived.remove();
-	}
-	
-	public synchronized boolean hasMessage() {
-	    return !messagesReceived.isEmpty();
-	   }
-	   
+        return messagesToSend.offer(s);
+    }
+    
+    public synchronized String getMessage() {
+        if(messagesReceived.isEmpty())
+        return null;
+        
+        return messagesReceived.remove();
+    }
+    
+    public synchronized boolean hasMessage() {
+        return !messagesReceived.isEmpty();
+       }
+       
 
 }
