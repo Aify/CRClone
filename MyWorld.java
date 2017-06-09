@@ -104,6 +104,8 @@ public class MyWorld extends World
     
     public void playCard(Card c, int x, int y, boolean localOnly)
     {
+        System.out.println("playing card " + c.toString());
+        
         //check if we can afford the card
         if(c.getElixirCost() < myElixir)
         {

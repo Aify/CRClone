@@ -44,7 +44,7 @@ public class GameManager extends Actor
         //deal with the card spawning
         handleCardSpawn();
         
-        
+
         switch(state)
         {
             case UNCONNECTED:
@@ -58,6 +58,7 @@ public class GameManager extends Actor
                 syncOtherSpawnedUnits();
                 break;
         }
+
     }
     
     

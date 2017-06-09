@@ -46,7 +46,7 @@ public class Troop extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
+    {        
         if(active)
         {
             //if active, act
