@@ -14,7 +14,7 @@ public class Tornado extends Card
     spawnTime = 0;
 
 
-	id = -1;
+	id = 57;
     hp = 0;
     damage = 58;
     range = 800000;

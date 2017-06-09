@@ -14,7 +14,7 @@ public class Wizard extends Card
   spawnTime = 1;
 
 
-	 id = -1;
+	 id = 64;
     hp = 598;
     damage = 228;
     range = 110;

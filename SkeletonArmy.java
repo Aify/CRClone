@@ -11,7 +11,7 @@ public class SkeletonArmy extends Card
         elixirCost = 3;
         amountOfTroops = 14;
         spawnTime = 1;
-        id = -1;
+        id = 53;
         hp = 67;
         damage = 67;
         range = 1;

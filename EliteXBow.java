@@ -11,7 +11,7 @@ public class EliteXBow extends Card
         elixirCost = 8;
         amountOfTroops = 1;
         spawnTime = 2;
-        id = -1;
+        id = 17;
         hp = 1400;
         damage = 26;
         range = 180;

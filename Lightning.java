@@ -11,7 +11,7 @@ public class Lightning extends Card
         elixirCost = 6;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 37;
         hp = 0;
         damage = 864;
         range = 9999999;

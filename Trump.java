@@ -11,7 +11,7 @@ public class Trump extends Card
         elixirCost = 6;
         amountOfTroops = 1;
         spawnTime = -1;
-        id = 8;
+        id = 58;
         hp = 1500;
         damage = 400;
         range = 100;

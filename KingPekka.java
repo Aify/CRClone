@@ -11,7 +11,7 @@ public class KingPekka extends Card
         elixirCost = 6;
         amountOfTroops = 1;
         spawnTime = 2;
-        id = 5;
+        id =35;
         hp = 1050;
         damage = 2000;
         range = 2;

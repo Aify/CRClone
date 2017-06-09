@@ -13,7 +13,7 @@ public class HogRider extends Card
        spawnTime = 1;
 
 
-	   id = -1;
+	   id = 29;
        hp = 1408;
        damage = 264;
        range = 1;

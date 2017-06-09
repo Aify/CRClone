@@ -11,7 +11,7 @@ public class UltraWizard extends Card
         elixirCost = 9;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = 5;
+        id = 59;
         hp = 600;
         damage = 185;
         range = 80;

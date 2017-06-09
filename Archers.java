@@ -11,7 +11,7 @@ public class Archers extends Card
         elixirCost = 3;
         amountOfTroops = 2;
         spawnTime = 1;
-        id = -1;
+        id = 2;
         hp = 254;
         damage = 86;
         range = 100;
