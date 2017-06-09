@@ -9,6 +9,8 @@ import java.util.Date;
  */
 public class Troop extends Actor
 {
+    public int playerNumber;
+    
     private int id;
     private int hp;
     private int damage;
@@ -160,7 +162,7 @@ public class Troop extends Actor
     }
     
     public boolean checkIsEnemy(Troop t) {
-        return true;
+        return (t.playerNumber == this.playerNumber);
     }
     
     public void attack() {
