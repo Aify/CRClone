@@ -11,7 +11,7 @@ public class Knight extends Card
         elixirCost = 3;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 36;
         hp = 1399;
         damage = 159;
         range = 1;

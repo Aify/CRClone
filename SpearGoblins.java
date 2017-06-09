@@ -11,7 +11,7 @@ public class SpearGoblins extends Card
         elixirCost = 2;
         amountOfTroops = 3;
         spawnTime = 1;
-        id = -1;
+        id = 46;
         hp = 110;
         damage = 50;
         range = 100;

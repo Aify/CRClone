@@ -13,7 +13,7 @@ public class InfernoTower extends Card
      spawnTime = 1;
 
 
-	  id = -1;
+	  id = 30;
       hp = 1408;
       damage = 100;
       range = 120;

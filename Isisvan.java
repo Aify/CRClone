@@ -8,10 +8,10 @@ public class Isisvan extends Card
 {
     public Isisvan()
     {
-        elixirCost = 3;
+        elixirCost = 5;
         amountOfTroops = 3;
         spawnTime = -1;
-        id = 7;
+        id = 32;
         hp = 0;
         damage = 0;
         range = 2000;

@@ -11,7 +11,7 @@ public class Minions extends Card
         elixirCost = 3;
         amountOfTroops = 3;
         spawnTime = 1;
-        id = -1;
+        id = 40;
         hp = 190;
         damage = 84;
         range = 40;

@@ -9,6 +9,8 @@ import java.util.Date;
  */
 public class Troop extends Actor
 {
+    public int playerNumber;
+    
     private int id;
     private int hp;
     private int damage;
@@ -46,7 +48,7 @@ public class Troop extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
+    {        
         if(active)
         {
             //if active, act
@@ -118,6 +120,8 @@ public class Troop extends Actor
         Troop closestEnemy = null;
         
         if (MyWorld.allTroops.get(0) == null) {
+            // no troops
+            return;
         }
         double closestDistance = getDistanceToTarget(MyWorld.allTroops.get(0));
         
@@ -152,6 +156,10 @@ public class Troop extends Actor
     }
     
     public boolean checkCanHit(Troop t) {
+        if (mTType == TargetType.ALL) {
+            return true;
+        }
+        
         if (t.getTargetType() == mTType) {
             return true;
         }
@@ -160,7 +168,8 @@ public class Troop extends Actor
     }
     
     public boolean checkIsEnemy(Troop t) {
-        return true;
+        // if the troop is NOT us, then it's an enemy
+        return (t.playerNumber != this.playerNumber);
     }
     
     public void attack() {

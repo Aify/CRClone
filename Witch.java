@@ -11,7 +11,7 @@ public class Witch extends Card
         elixirCost = 5;
         amountOfTroops = 1;
         spawnTime = 3;
-        id = 5;
+        id = 63;
         hp = 665;
         damage = 69;
         range = 100;

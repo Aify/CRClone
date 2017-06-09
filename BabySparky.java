@@ -11,7 +11,7 @@ public class BabySparky extends Card
         elixirCost = 4;
         amountOfTroops = 1;
         spawnTime = 3;
-        id = -1;
+        id = 5;
         hp = 166;
         damage = 700;
         range = 100;

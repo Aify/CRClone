@@ -13,7 +13,7 @@ public class Poison extends Card
     spawnTime = 1;
 
 
-	id = -1;
+	id = 48;
      hp = 0;
      damage = 75;
    range = 80000;

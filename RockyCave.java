@@ -11,7 +11,7 @@ public class RockyCave extends Card
         elixirCost = 8;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 52;
         hp = 800;
         damage = 260;
         range = 1;

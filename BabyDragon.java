@@ -11,7 +11,7 @@ public class BabyDragon extends Card
         elixirCost = 4;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 4;
         hp = 1064;
         damage = 133;
         range = 63;

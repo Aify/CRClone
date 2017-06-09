@@ -11,10 +11,11 @@ import java.time.*;
 public class MyWorld extends World
 {
     //Elixir constants
-    private final int ELIXIR_STEP_TIME = 5; //every 5 seconds...
-    private final int ELIXIR_STEP_GAIN = 5; //gain 5 elixir
+    private final int ELIXIR_STEP_TIME = 1; //every 5 seconds...
+    private final int ELIXIR_STEP_GAIN = 1; //gain 5 elixir
     
     public static ArrayList<Troop> allTroops = new ArrayList<Troop>();
+    public static ArrayList<SpawnedCardData> newCards = new ArrayList<SpawnedCardData>();
     private static Instant lastGainTime;
     private int myElixir;
 
@@ -34,7 +35,13 @@ public class MyWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
-    {        
+    {
+        //setup game manager
+        addObject(new GameManager(),0,0);
+        
+        //test card
+        addObject(new ActorCard("Goblins"), 128, 700);
+        
         /*
         Troop troop = new Troop();
         addObject(troop,320,482);
@@ -78,7 +85,7 @@ public class MyWorld extends World
         {
             myElixir += ELIXIR_STEP_GAIN;
             lastGainTime = Instant.now();
-            System.out.println(myElixir);
+            //System.out.println(myElixir);
         }
     }
     
@@ -90,18 +97,33 @@ public class MyWorld extends World
         return myElixir;
     }
     
-    public void playCard(Card c, int x, int y)
+    public boolean playCard(Card c, int x, int y)
     {
+        //System.out.println("playCard cxy");
+        return playCard(c,x,y,false,GameManager.playerNumber);
+    }
+    
+    public boolean playCard(Card c, int x, int y, boolean localOnly,int pid)
+    {
+        //System.out.println("playing card " + c.toString());
+        
         //check if we can afford the card
-        if(c.getElixirCost() < myElixir)
+        if(c.getElixirCost() > myElixir)
         {
             //we can't afford it, so abort
             //we can put some kind of notification here if we want
-            return;
+
+            return false;
         }
         
         //spend the elixir
         myElixir -= c.getElixirCost();
+        
+        //add to "new cards" list if not localOnly
+        if(!localOnly)
+        {
+            newCards.add(new SpawnedCardData(c,x,y));
+        }
         
         //spawn as many troops as the card specifies
         for(int i = 0; i < c.getAmountOfTroops(); i++)
@@ -109,6 +131,7 @@ public class MyWorld extends World
         
             //create a troop and load data from the card
             Troop t = new Troop();
+            //System.out.println(t);
             t.setID(c.getId());
             t.setHP(c.getHp());
             t.setDamage(c.getDamage());
@@ -120,6 +143,11 @@ public class MyWorld extends World
             t.setTargetType(c.getTType());
             t.setMTargetType(c.getMTType());
             t.setAttackTime(c.getAttackTime());
+            t.playerNumber = pid;
+            
+            //set image
+            String cardName = c.getClass().getSimpleName();
+            t.setImage("images/"+cardName+".png");
             
             //set spawn time if non-zero
             int spawnTime = c.getSpawnTime();
@@ -134,6 +162,9 @@ public class MyWorld extends World
             
             //add the troop to the world
             addObject(t, x, y);
+            
+            allTroops.add(t);
         }
+        return true;
     }
 }

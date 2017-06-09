@@ -13,7 +13,7 @@ public class BattleRam extends Card
     spawnTime = 1;
 
 
-	id = -1;
+	id = 10;
     hp = 756;
      damage = 492;
     range = 1;
