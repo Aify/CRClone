@@ -31,13 +31,7 @@ public class GameManager extends Actor
     public GameManager()
     {
         super();
-        
-        networkHandler = new Network();
-        networkHandler.IP = SERVER_IP;
-        networkHandler.Port = PORT;
-        networkHandler.okayToRun = true;
-        networkHandler.start();
-        
+   
         state = GameManagerState.UNCONNECTED;
     }
     
@@ -91,6 +85,15 @@ public class GameManager extends Actor
     private void attemptConnection()
     {
         //connect to the server and switch state when done
+        if(networkHandler == null)
+        {
+            networkHandler = new Network();
+            networkHandler.IP = SERVER_IP;
+            networkHandler.Port = PORT;
+            networkHandler.okayToRun = true;
+            networkHandler.start();
+        }
+        
 
              if(networkHandler.connection != null && networkHandler.connection.isConnected()) {
                  state = GameManagerState.WAITING;
