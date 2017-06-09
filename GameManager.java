@@ -126,7 +126,7 @@ public class GameManager extends Actor
             String s = networkHandler.getMessage();
             System.out.println(s);
             String[] sParts = s.split("\\{");
-            if(sParts[0] == "5" && Boolean.valueOf(sParts[1])) {
+            if(sParts[0].equals("5") && Boolean.valueOf(sParts[1])) {
                 state = GameManagerState.STARTED;
                 System.out.println("Game started!");
             }
@@ -160,7 +160,7 @@ public class GameManager extends Actor
             try {
                 String s = networkHandler.getMessage();
                 String[] sParts = s.split("\\{");
-                if(sParts[0] == "4") {
+                if(sParts[0].equals("4")) {
                     String[] args = sParts[1].split(",");
                     String c = args[0];
                     int x = Integer.parseInt(args[1]);
