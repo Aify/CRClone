@@ -124,7 +124,7 @@ public class GameManager extends Actor
         networkHandler.addMessage("5{CHECK");
         if(networkHandler.hasMessage()) {
             String s = networkHandler.getMessage();
-            //System.out.println(s);
+            System.out.println(s);
             String[] sParts = s.split("\\{");
             if(sParts[0] == "5" && Boolean.valueOf(sParts[1])) {
                 state = GameManagerState.STARTED;
