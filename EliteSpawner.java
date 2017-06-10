@@ -11,7 +11,7 @@ public class EliteSpawner extends Card
         elixirCost = 7;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 16;
         hp = 1200;
         damage = 100;
         range = 1;

@@ -11,7 +11,7 @@ public class GiantSkeleton extends Card
         elixirCost = 6;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 24;
         hp = 2660;
         damage = 172;
         range = 1;

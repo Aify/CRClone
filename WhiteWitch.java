@@ -6,13 +6,15 @@
  */
 public class WhiteWitch extends Card  
 {
-    private int elixerCost = 7;
-    private int amountOfTroops = 1;
-    private int troopID;
-    private int spawnTime = 10;
+	public WhiteWitch()
+	{
+		elixirCost = 7;
+		amountOfTroops = 1;
+		spawnTime = 10;
 
 
-	private int id = 3;
+<<<<<<< HEAD
+    private int id = 3;
     private int hp = 220;
     private int damage = 320;
     private int range = 0;
@@ -24,14 +26,24 @@ public class WhiteWitch extends Card
     private DamageType dType;
     private TargetType tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
     private TargetType mTType = TargetType.ALL;  // my t type, what the troop prefers to target
+=======
+		id = 62;
+		hp = 220;
+		damage = 320;
+		range = 0;
+		attackCooldown = 7;
+		splashRange = 50;
+			
+		speed = Speed.MEDIUM;
 
-    private int attackTime;
+		tType = TargetType.GROUND;   // the type of the troop, eg: this is a building or this is a flying or ground
+		MTType = TargetType.ALL;  // my t type, what the troop prefers to target
+	}
+>>>>>>> e9facda71d83a70bbe9508f69bb4c56ed140322c
+
 
     public void spawn() {
 
     }
-    
-    public String toString() {
-        return "" + troopID + "[" + amountOfTroops + "[" + elixerCost + "]";
-    }
+
 }

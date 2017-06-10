@@ -11,7 +11,7 @@ public class MiniPekka extends Card
         elixirCost = 4;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 41;
         hp = 1056;
         damage = 572;
         range = 1;

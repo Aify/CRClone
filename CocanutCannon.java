@@ -11,7 +11,7 @@ public class CocanutCannon extends Card
         elixirCost = 5;
         amountOfTroops = 1;
         spawnTime = 2;
-        id = 9;
+        id = 14;
         hp = 300;
         damage = 300;
         range = 140;

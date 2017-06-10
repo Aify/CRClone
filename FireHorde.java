@@ -11,7 +11,7 @@ public class FireHorde extends Card
         elixirCost = 4;
         amountOfTroops = 6;
         spawnTime = 1;
-        id = -1;
+        id = 19;
         hp = 45;
         damage = 85;
         range = 3;

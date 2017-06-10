@@ -11,7 +11,7 @@ public class KingDragon extends Card
         elixirCost = 6;
         amountOfTroops = 1;
         spawnTime = 3;
-        id = -1;
+        id = 34;
         hp = 1800;
         damage = 300;
         range = 80;

@@ -11,7 +11,7 @@ public class Bomber extends Card
         elixirCost = 3;
         amountOfTroops = 1;
         spawnTime = 2;
-        id = -1;
+        id = 11;
         hp = 311;
         damage = 271;
         range = 80;

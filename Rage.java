@@ -11,7 +11,7 @@ public class Rage extends Card
         elixirCost = 2;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 50;
         hp = 999999;
         damage = 0;
         range = 100;

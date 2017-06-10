@@ -11,7 +11,7 @@ public class Rocket extends Card
         elixirCost = 6;
         amountOfTroops = 1;
         spawnTime = 1;
-        id = -1;
+        id = 51;
         hp = 1;
         damage = 493;
         range = 99999999;

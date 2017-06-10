@@ -11,7 +11,7 @@ public class Isis extends Card
         elixirCost = 3;
         amountOfTroops = 1;
         spawnTime = -1;
-        id = 1;
+        id = 31;
         hp = 150;
         damage = 1300;
         range = 0;

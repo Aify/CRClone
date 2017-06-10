@@ -11,7 +11,7 @@ public class ArcherGod extends Card
         elixirCost = 9;
         amountOfTroops = 1;
         spawnTime = 12;
-        id = -1;
+        id = 1;
         hp = 1500;
         damage = 1200;
         range = 150;
