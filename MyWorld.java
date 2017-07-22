@@ -17,7 +17,7 @@ public class MyWorld extends World
     public static ArrayList<Troop> allTroops = new ArrayList<Troop>();
     public static ArrayList<SpawnedCardData> newCards = new ArrayList<SpawnedCardData>();
     private static Instant lastGainTime;
-    private int myElixir;
+    private int myElixir; 
 
     /**
      * Constructor for objects of class MyWorld.
@@ -38,10 +38,10 @@ public class MyWorld extends World
     {
         //setup game manager
         addObject(new GameManager(),0,0);
-        
+
         //test card
-        addObject(new ActorCard("Goblins"), 128, 700);
-        
+        addObject(new ActorCard("Goblins"), 97, 788);
+
         /*
         Troop troop = new Troop();
         addObject(troop,320,482);
